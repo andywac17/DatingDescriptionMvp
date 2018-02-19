@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#000"
+        android:id="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/profile_image_button"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/profile_icon" />
+
+
+            <ImageView
+                android:id="@+id/cards_img_button"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/menu_icon" />
+
+            <ImageView
+                android:id="@+id/notifications_img_button"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/bell_icon" />
+
+            <ImageView
+                android:id="@+id/chat_img_button"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/chat_icon" />
+        </LinearLayout>
+    </Toolbar>
+    <com.huxq17.swipecardsview.SwipeCardsView
+        android:id="@+id/swipeCardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        app:alphaOffsetStep="20"
+        app:scaleOffsetStep="0.08"
+        app:yOffsetStep="20dp"
+        >
+    </com.huxq17.swipecardsview.SwipeCardsView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/likeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:layout_toLeftOf="@+id/center"
+        android:clickable="true"
+        app:backgroundTint="@android:color/background_dark"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/like" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/dislikeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/likeBtn"
+        android:layout_toRightOf="@+id/center"
+        android:clickable="true"
+        app:backgroundTint="@android:color/background_dark"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/dislike" />
+
+    <LinearLayout
+        android:id="@+id/center"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dislikeBtn"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"></LinearLayout>
+
+
+</RelativeLayout>
